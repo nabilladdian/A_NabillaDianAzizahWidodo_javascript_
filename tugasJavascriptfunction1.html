@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antrian Pembeli</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Antrian Pembeli</h1>
+    <button onclick="processQueue()">Proses Antrian</button>
+
+    <script>
+        function processQueue() {
+            // Awal antrian
+            let queue = ["Ray", "Fiki", "Fadhilla", "Farah"];
+            console.log("Antrian awal:", queue);
+
+            // Pembeli baru datang
+            queue.push("Nabila");
+            console.log("Setelah Nabila datang:", queue);
+            queue.push("Maza", "Elsi");
+            console.log("Setelah Maza dan Elsi datang:", queue);
+
+            // Antrian terakhir pulang ke rumah
+            const lastOut = queue.pop();
+            console.log(`Pembeli terakhir (${lastOut}) tidak jadi antri dan pulang.`);
+            console.log("Antrian setelah pembeli terakhir pulang:", queue);
+
+            // Antrian pertama sudah dilayani
+            const firstOut = queue.shift();
+            console.log(`Pembeli pertama (${firstOut}) sudah mendapatkan belanjaannya.`);
+            console.log("Antrian setelah pembeli pertama selesai:", queue);
+
+            // Antrian kedua sudah dilayani
+            const secondOut = queue.shift();
+            console.log(`Pembeli kedua (${secondOut}) sudah mendapatkan belanjaannya.`);
+            console.log("Antrian setelah pembeli kedua selesai:", queue);
+
+            // Pembeli baru yang nyerobot antrian
+            queue.unshift("Tomi");
+            console.log("Setelah Tomi nyerobot antrian:", queue);
+
+            // Menampilkan hasil akhir
+            alert(`Antrian akhir: ${queue.join(", ")}`);
+            console.log("Hasil akhir antrian:", queue);
+        }
+    </script>
+</body>
+</html>

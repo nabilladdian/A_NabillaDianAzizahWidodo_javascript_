@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar Html dan JS Error dan Callback</title>
+</head>
+<body>
+<script>
+function setTime() {
+  const header = document.getElementById("header");
+  if (header) {
+    header.textContent = new Date().toString();
+  } else {
+    console.error("Header element not found");
+  }
+}
+setInterval(setTime, 1000);
+console.log("Program Finish");
+</script>
+</body>
+</html>

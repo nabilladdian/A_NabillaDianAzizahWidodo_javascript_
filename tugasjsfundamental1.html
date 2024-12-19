@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Mainan Ceria</title>
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f0f8ff, #87cefa);
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #0056b3;
+            margin: 20px 0;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0 30px;
+            color: #444;
+        }
+
+        /* Gaya Tombol */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        /* Gaya Kontainer */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Toko Mainan Ceria</h1>
+        <p>Kami menyediakan berbagai mainan berkualitas untuk anak-anak Anda!</p>
+        <button onclick="displayData()">Tampilkan Data</button>
+    </div>
+
+    <script>
+        function displayData() {
+            // Data Toko Mainan
+            const storeName = "Toko Mainan Ceria"; // String
+            const isStoreOpen = true; // Boolean
+            const totalToys = 100; // Number
+            const toyCategories = ["Robot", "Boneka", "Kendaraan", "Puzzle"]; // Array
+            const featuredToy = { // Object
+                name: "Lego City",
+                price: 250000,
+                inStock: true
+            };
+
+            // Menampilkan data di console
+            console.log("Nama Toko:", storeName);
+            console.log("Apakah toko buka?", isStoreOpen);
+            console.log("Total Mainan:", totalToys);
+            console.log("Kategori Mainan:", toyCategories);
+            console.log("Mainan Unggulan:", featuredToy);
+
+            // Logical Operator
+            const canBuy = isStoreOpen && featuredToy.inStock; // True jika toko buka dan mainan tersedia
+            console.log("Bisakah membeli mainan unggulan?", canBuy);
+
+            // Equality Comparison
+            const isExpensive = featuredToy.price > 200000; // True jika harga mainan lebih dari 200.000
+            console.log("Apakah mainan unggulan mahal?", isExpensive);
+
+            // Alert berdasarkan kondisi
+            if (isStoreOpen) {
+                alert(`Selamat datang di ${storeName}!`);
+            } else {
+                alert(`Maaf, ${storeName} saat ini tutup.`);
+            }
+
+            if (canBuy) {
+                alert(`Mainan unggulan "${featuredToy.name}" tersedia dengan harga Rp${featuredToy.price.toLocaleString()}.`);
+            } else {
+                alert("Maaf, mainan unggulan tidak tersedia saat ini.");
+            }
+        }
+    </script>
+</body>
+</html>
